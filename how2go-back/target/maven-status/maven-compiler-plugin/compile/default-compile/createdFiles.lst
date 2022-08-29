@@ -1,0 +1,12 @@
+br\edu\ifpb\bruna\claudio\keven\how2go\service\PostagemService.class
+br\edu\ifpb\bruna\claudio\keven\how2go\service\UsuarioService.class
+br\edu\ifpb\bruna\claudio\keven\how2go\controller\PostagemController.class
+br\edu\ifpb\bruna\claudio\keven\how2go\controller\UsuarioController.class
+br\edu\ifpb\bruna\claudio\keven\how2go\model\Postagem.class
+br\edu\ifpb\bruna\claudio\keven\how2go\How2goApplication.class
+br\edu\ifpb\bruna\claudio\keven\how2go\model\Usuario.class
+br\edu\ifpb\bruna\claudio\keven\how2go\repositories\UsuarioRepository.class
+br\edu\ifpb\bruna\claudio\keven\how2go\AppConfig$1.class
+br\edu\ifpb\bruna\claudio\keven\how2go\ServletInitializer.class
+br\edu\ifpb\bruna\claudio\keven\how2go\AppConfig.class
+br\edu\ifpb\bruna\claudio\keven\how2go\repositories\PostagemRepository.class

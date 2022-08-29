@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: rgb(227, 241, 238);}
+
+snack-bar-container.success {
+    color: white;
+    background-color: rgb(24, 199, 24);
+}
+
+snack-bar-container.success .mat-simple-snackbar-action {
+    color: white;
+}
+
+snack-bar-container.error {
+    color: white;
+    background-color: rgb(150, 33, 13);
+}
+
+snack-bar-container.error .mat-simple-snackbar-action {
+    color: white;
+}
+
+snack-bar-container.warning {
+    color: black;
+    background-color: rgb(255, 98, 41);
+}
+
+snack-bar-container.warning .mat-simple-snackbar-action {
+    color: white;
+}
+
+snack-bar-container.info {
+    color: white;
+    background-color: rgb(45, 137, 165);
+}
+
+snack-bar-container.info .mat-simple-snackbar-action {
+    color: white;
+}

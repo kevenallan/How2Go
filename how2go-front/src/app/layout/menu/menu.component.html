@@ -1,0 +1,39 @@
+<div class="menu">
+    <button mat-button [matMenuTriggerFor]="menu">
+        <div class="menu-button">
+            <mat-icon class="menu-icone">person</mat-icon>
+        </div>
+        <div class="menu-nome-usuario">
+            {{usuario_logado[0].nome | titlecase}}
+         </div>
+        <div class="menu-nome-usuario" *ngIf="usuario_logado[0].nome==undefined">
+            Login/Cadastre-se
+        </div>
+    </button>
+    <div class="logo">
+        <button mat-icon-button class="menu-button" [routerLink]="['/']">
+            <img src="../../../assets/logo.png" (click)="voltar()" >
+        </button>
+    </div>
+    <div style="width: 20%;">
+        <mat-form-field class="menu-pesquisar" appearance="fill">
+            <mat-label>Pesquisar por destino</mat-label>
+            <input  matInput type="text" #inputBuscar (keyup)="filtrar(inputBuscar.value)">
+        </mat-form-field>
+    </div>    
+    
+    <mat-menu #menu="matMenu" class="menu-itens">
+        <div *ngIf="usuario_logado[0].nome!=undefined">
+            <button mat-menu-item (click)="editarPerfil(usuario_logado[0])">Editar perfil</button>
+            <button mat-menu-item (click)="minhasPostagens(usuario_logado[0])">Minhas postagens</button>
+            <button mat-menu-item (click)="sair()" [routerLink]="['/']">Sair</button>
+        </div>
+        <div *ngIf="usuario_logado[0].nome==undefined">
+            <button mat-menu-item (click)="openDialogLoginUsuario()">Entrar</button>
+            <button mat-menu-item (click)="openDialogCadastroUsuario()">Criar conta</button>
+        </div>
+    </mat-menu>
+  
+</div>
+
+<div class="teste" id="inicio"></div>

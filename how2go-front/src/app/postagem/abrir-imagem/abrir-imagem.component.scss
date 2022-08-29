@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.imagem {
+    width: 450px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+ .fechar {
+    justify-content: flex-end;
+ }

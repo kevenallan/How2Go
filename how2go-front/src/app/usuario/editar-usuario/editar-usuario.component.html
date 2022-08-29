@@ -1,0 +1,76 @@
+<div class="container">
+    <mat-card class="card-cadastro-usuario">
+        <h1>Edite seu Perfil</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput [(ngModel)]="usuario.nome">
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="usuario.email">
+        </mat-form-field>
+
+        <h3>Alterar Senha
+            <button mat-icon-button  (click)="alterarSenha()">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </h3>
+         
+
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <mat-form-field appearance="fill" *ngIf="!senhaEdit">
+                <mat-label>Digite sua senha antiga</mat-label>
+                <input matInput disabled [(ngModel)]="senha1" type="password"> 
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" *ngIf="senhaEdit">
+                <mat-label>Digite sua senha antiga</mat-label>
+                <input matInput  [(ngModel)]="senha1" type="password"> 
+            </mat-form-field>  
+        </div>
+
+        <mat-form-field appearance="fill" *ngIf="!senhaEdit">
+            <mat-label>Digite sua nova senha</mat-label>
+            <input matInput disabled [(ngModel)]="senha2" type="password"> 
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" *ngIf="senhaEdit">
+            <mat-label>Digite sua nova senha</mat-label>
+            <input matInput  [(ngModel)]="senha2" type="password"> 
+        </mat-form-field>
+
+        <h3>Alterar Foto de Perfil</h3>
+
+        <div class="button-enviar-foto"> 
+          <label>Enviar Foto</label>
+          
+          <div class="arq">
+            <label for="arquivo"><mat-icon class="add-foto">add_a_photo</mat-icon></label>
+            <input name="arquivo" type="file" id="arquivo" (change)="uploadFoto($event)">
+            
+            <div style="margin-left: 10%; position: relative; left: 50%; bottom: 20%;">
+                <img mat-card-avatar src="{{usuario.foto}}" class="iconePerfil">
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="example-button-container">
+           <button mat-raised-button color="primary" style="background-color: rgb(253, 111, 60); color: white;" (click)="editarUsuario()"> 
+            Editar conta
+            </button>
+        </div>
+
+        <h1>Exclua sua Conta</h1>
+        <h3>Tem certeza que deseja excluir sua conta?</h3>
+
+        <div class="example-button-container">
+            <button mat-raised-button color="primary" style="background-color: rgb(253, 111, 60); color: white;" (click)="excluirUsuario()"> 
+             Excluir conta
+            </button>
+        </div>
+
+  </mat-card>
+ 
+</div>

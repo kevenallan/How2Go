@@ -1,0 +1,88 @@
+<div class="card-postagem">
+  <mat-card class="example-card" *ngFor="let p of postagens; index as i">
+    <mat-card-header>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="mat-icon-menu" *ngIf="usuario_logado[0].email==p.usuario.email">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="editar(p)">
+          <mat-icon>edit</mat-icon>
+          <span>Editar postagem</span>
+        </button>
+        <button mat-menu-item (click)="remover(p)">
+          <mat-icon>delete</mat-icon>
+          <span>Excluir postagem</span>
+        </button>
+      </mat-menu>
+      <div mat-card-avatar class="example-header-image"><img mat-card-avatar src={{p.usuario.foto}}></div>
+      <mat-card-subtitle class="mat-card-nome">{{p.usuario.nome | titlecase}}</mat-card-subtitle>
+      <mat-card-title>{{p.titulo}}</mat-card-title>
+      <mat-card-subtitle>Destino: {{p.destino}}</mat-card-subtitle>   
+    </mat-card-header>
+    <carousel>
+      <slide *ngFor="let foto of p.fotos">
+        <img src="{{foto}}" style="display: block; width: 100%; height: 320px;">
+      </slide>
+    </carousel>
+    <br>
+    <mat-card-subtitle>Locais a visitar: {{p.locais}}</mat-card-subtitle>
+    <mat-card-content>
+      <p>
+        {{p.descricao}}
+      </p>
+    </mat-card-content>   
+    
+    <div class="comentarios-buttons">
+        <mat-form-field class="comentario-area">
+            <mat-label>Digite o seu comentario</mat-label>
+            <textarea matInput #comentario [(ngModel)]="comentarios"></textarea>
+        </mat-form-field>
+        <div>    
+        <mat-card-actions class="card-buttons">
+            <button mat-raised-button color="primary" *ngIf="usuario_logado[0].email==undefined" (click)="abrirDialogLogin()" style="background-color: rgb(255, 98, 41);">Comentar</button>
+            <button mat-raised-button color="primary" *ngIf="usuario_logado[0].email!=undefined" (click)="inserirComentario(p,comentario.value)" style="background-color: rgb(255, 98, 41);" >Comentar</button>
+            <button *ngIf="usuario_logado[0].idUsuario==undefined" mat-raised-button matBadge="{{p.likes.length}}" matBadgeColor="warn" (click)="abrirDialogLogin()" class="comentario-like"><mat-icon>thumb_up</mat-icon></button>
+            <button *ngIf="usuario_logado[0].idUsuario!=undefined && p.likes.includes(usuario_logado[0].idUsuario.toString(),0)"  mat-raised-button matBadge="{{p.likes.length}}" matBadgeColor="warn" (click)="clickLike(p)" class="comentario-like likeAtivo"><mat-icon>thumb_up</mat-icon></button>
+            <button *ngIf="usuario_logado[0].idUsuario!=undefined && !p.likes.includes(usuario_logado[0].idUsuario.toString(),0)" mat-raised-button matBadge="{{p.likes.length}}" matBadgeColor="warn" (click)="clickLike(p)" class="comentario-like"><mat-icon>thumb_up</mat-icon></button>
+        </mat-card-actions>
+        </div>
+    </div>
+    
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel class="panel-exibir">
+        <mat-expansion-panel-header >
+          <mat-panel-title>
+            <span style="color: white;">Exibir todos os comentários</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+    
+        <div class="mat-panel-comentario" *ngFor="let c of p.comentarios; index as i">
+          <mat-panel-title *ngIf="i%2===0" style="font-weight: bold;">
+           {{p.comentarios[i] | titlecase }}:
+           <button *ngIf="p.comentarios[i]==usuario_logado[0].nome || p.usuario.idUsuario==usuario_logado[0].idUsuario" mat-icon-button (click)="removerComentario(p, i)" style="position: absolute; right: 1.6%;">
+            <mat-icon>delete</mat-icon>
+          </button>
+         </mat-panel-title>
+         <mat-panel-description *ngIf="i%2===1" style="margin-left: 5px; color: black;">
+          {{p.comentarios[i]}}
+         </mat-panel-description>
+         
+       </div>
+
+      </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion> 
+
+  </mat-card>
+  <div class="example-button-container">
+    <button mat-mini-fab color="primary" *ngIf="usuario_logado[0].email!=null" style="background-color: rgb(255, 98, 41);" aria-label="Example icon button with a menu icon"  [routerLink]="['/criarPostagem']">
+      <mat-icon>add</mat-icon>
+    </button>
+</div>
+</div> 
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

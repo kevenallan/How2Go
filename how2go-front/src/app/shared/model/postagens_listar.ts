@@ -1,0 +1,1 @@
+export const POSTAGENS_LISTAR =[];

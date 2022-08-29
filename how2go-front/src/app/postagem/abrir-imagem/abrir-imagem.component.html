@@ -1,0 +1,9 @@
+<div class="container">
+    <div mat-dialog-content *ngFor="let foto of data.postagem.fotos">
+        <img src="{{foto}}" class="imagem">
+    </div>   
+</div>
+<div mat-dialog-actions class="fechar">
+    <button mat-button mat-dialog-close color="warn">Fechar</button>
+</div>
+

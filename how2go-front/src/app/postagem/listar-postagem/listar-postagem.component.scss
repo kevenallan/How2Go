@@ -1,0 +1,76 @@
+.card-postagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(227, 241, 238);
+}
+
+.example-card {
+    margin-top: 40px;
+    width: 45%;  
+}
+
+.mat-card-nome {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 8px;   
+}
+
+.example-button-container {
+    display: flex;
+    position: sticky;
+    align-self: flex-end;
+    bottom: 3%;
+    right: 3%;
+}
+
+.card-buttons{
+    margin-left: 5px;
+    margin-top: 11px;
+}
+
+.card-buttons button:first-child {
+    background-color: rgb(45, 137, 165);
+}
+
+.comentarios-buttons{
+    display: flex;  
+}
+
+.comentario-like {
+    position:absolute;
+    right: 2%;
+    color: black;
+    background-color: rgb(211, 211, 211);
+}
+
+.likeAtivo {
+    background-color: rgb(45, 137, 165);
+    color: white;
+}
+
+.comentario-area {
+    width: 50%;
+}
+
+.mat-icon-menu {
+    position: absolute;
+    right: 1%;
+}
+
+.mat-panel-comentario {
+    margin-top: 5px;
+    // border: solid 2px rgb(202, 213, 214);
+    // border-radius: 3%;
+}
+
+.panel-exibir {
+    background-color: rgb(70, 144, 167);  
+}
+
+.button-verMais {
+    font-size: 40px;
+    position: absolute;
+    right: 0%;
+}
+

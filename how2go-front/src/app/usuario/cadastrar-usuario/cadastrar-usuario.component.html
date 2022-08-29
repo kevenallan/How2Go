@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="btn-fechar">
+        <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
+    </div>
+    <mat-card class="card-cadastro-usuario">
+        <h1>Crie sua conta</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput [(ngModel)]="usuario.nome">
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="usuario.email">
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+            <mat-label>Digite sua senha</mat-label>
+            <input matInput [(ngModel)]="senha1" type="password">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Digite sua senha novamente</mat-label>
+            <input matInput [(ngModel)]="senha2" type="password">
+        </mat-form-field>
+
+        <div class="button-enviar-foto"> 
+          <label>Enviar Foto</label>
+          
+          <div class="arq">
+            <label for="arquivo"><mat-icon class="add-foto">add_a_photo</mat-icon></label>
+            <input name="arquivo" type="file" id="arquivo" (change)="uploadFoto($event)">
+            <label for="arquivo" class="file">{{file}}</label>      
+          </div>
+          
+        </div>
+
+        <div class="example-button-container">
+           <button mat-raised-button color="primary" style="background-color: rgb(253, 111, 60); color: white;" (click)="cadastrarUsuario()"> 
+            Criar conta
+            </button>
+        </div>
+
+  </mat-card>
+ 
+</div>
+

@@ -1,0 +1,85 @@
+.container {    
+    display: flex;
+    justify-content: center;
+    background-color: rgb(223, 245, 245);
+    height: 85vh;
+}
+
+.card-cadastro-postagem {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+    align-items: center;
+    width: 50%;   
+    margin-top: 1%;
+    
+}
+
+mat-form-field {
+    margin-top: 8px;
+    width: 60%;
+}
+
+input[type="file"]{
+    display:none;
+}
+
+.button-enviar-foto {
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+.button-enviar-foto .arq {
+    display: flex;
+}
+
+.button-enviar-foto .arq .file{
+    align-self: center;
+    margin-left: 5%;
+}
+
+.file {  
+    width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+mat-icon{
+    font-size: 20px;
+    height: 30px;
+    width:50px;
+    background: rgb(81, 165, 190);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:10px;
+    text-align:center;
+    transition:.5;
+    cursor:pointer;
+    border-radius: 5%;
+}
+mat-icon:hover{
+    background: rgb(120, 212, 212);
+}
+
+.example-button-container {
+    margin-top: 10px;
+    display: flex;
+    justify-items: end;
+    position:absolute;
+    right:3%;
+    bottom: 3%;
+}
+
+.example-button-container button {
+    background-color: rgb(32, 121, 148);
+}
+
+.card-postagem{
+    width: 30%;
+}

@@ -1,0 +1,54 @@
+.menu {
+    background-color: rgb(81, 165, 190);
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-icone {
+    display: flex;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-button {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-button img {
+    height: 75px;
+}
+
+.logo {
+    position: absolute;
+    right: 50%;
+}
+
+.menu-nome-usuario {
+    text-align: center;
+    font-size: 16px;
+}
+
+.menu-pesquisar {
+    padding-top: 15px;
+    padding-right: 10px;
+    width: 250px;
+}
+
+.home-button {
+    display: flex;
+    align-items: center;
+    margin-top: 60%;
+    font-size: 50px;
+}
+
+.teste {
+    height: 75px;
+}

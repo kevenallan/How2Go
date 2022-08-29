@@ -1,0 +1,50 @@
+<div class="container">
+    <mat-card class="card-cadastro-postagem">
+        <mat-form-field appearance="fill" style="width: 40%;">
+            <mat-label>Titulo</mat-label>
+            <input matInput [(ngModel)]="postagem.titulo">
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill" style="width: 40%; margin-left: 5%;">
+            <mat-label>Destino</mat-label>
+            <input matInput [(ngModel)]="postagem.destino">
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill" style="width: 40%;">
+            <mat-label>Locais a visitar</mat-label>
+            <textarea matInput [(ngModel)]="postagem.locais"></textarea>
+        </mat-form-field>
+       
+        <mat-form-field appearance="fill" style="width: 40%; margin-left: 5%;">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput [(ngModel)]="postagem.descricao"></textarea>
+        </mat-form-field>
+
+        <div style="display: flex; width: 100%; flex-wrap: wrap; justify-content: space-around;">
+            <div *ngFor="let foto of postagem.fotos">
+                <img src="{{foto}}" style="width: 120px; height: 80px; margin-top: 5px;" alt="">
+            </div>
+        </div>
+
+        <div class="button-enviar-foto" style="margin-right: 100px;"> 
+            <label>Enviar Foto</label>
+
+            <div class="arq">
+                <label for="arquivo"><mat-icon>add_a_photo</mat-icon></label>
+                <input name="arquivo" type="file" id="arquivo" multiple (change)="uploadFotos($event)">
+                <div class="file">
+                    <label for="arquivo" style="margin-left: 5px; width: 35%;" *ngFor="let foto of nomeFotos">{{foto}}</label>
+                </div>
+                  
+            </div>
+        </div>
+         
+        <div class="example-button-container">
+            <button mat-raised-button style="background-color: rgb(253, 111, 60); color: white;"  (click)="atualizarPostagem()">
+              Editar Postagem
+            </button>
+        </div>
+    </mat-card>
+</div>
+
+

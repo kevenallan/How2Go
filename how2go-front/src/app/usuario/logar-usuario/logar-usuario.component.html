@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="btn-fechar">
+        <button mat-button mat-dialog-close ><mat-icon>close</mat-icon></button>
+    </div>
+    <mat-card class="card-login-usuario">
+        <h1 id="login">Entrar no How2Go</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="email">
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input matInput [(ngModel)]="senha" type="password">
+        </mat-form-field>
+
+        <div class="example-button-container">
+            <button mat-raised-button color="primary" style="background-color: rgb(253, 111, 60);" (click)="entrar(email, senha)"> 
+             Entrar
+           </button>
+       </div>
+
+        <div class="cadastre-se">
+            Não tem uma conta? <button mat-raised-button mat-dialog-close (click)="openDialogCadastroUsuario()">Cadastre-se</button>
+        </div>
+
+    </mat-card>
+
+</div>
